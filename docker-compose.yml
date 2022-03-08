@@ -16,5 +16,11 @@ services:
     image: redis:4-alpine
     volumes:
       - redis_data:/data
+  nginx:
+    image: nginx:alpine
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
 volumes:
   redis_data:
